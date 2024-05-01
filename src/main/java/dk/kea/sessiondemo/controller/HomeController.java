@@ -29,4 +29,12 @@ public class HomeController {
         httpSession.setAttribute("theusername", user);
         return "redirect:/";
     }
+
+    @GetMapping("/logout")
+    public String doLogout(HttpSession httpSession){
+        //slet session
+        httpSession.invalidate();
+        //redirect til forsiden
+        return "redirect:/";
+    }
 }
